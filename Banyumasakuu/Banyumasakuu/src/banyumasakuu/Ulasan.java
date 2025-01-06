@@ -13,19 +13,20 @@ import java.util.Date;
 import java.util.Date;
 
 public class Ulasan {
+
     private String idUlasan;
-    private String idUser;
-    private String idKuliner;
+    private String user;
+    private int idKuliner;
     private String isiUlasan;
-    private int rating;
     private Date tanggalUlasan;
 
-    public Ulasan(String idUlasan, String idUser, String idKuliner, String isiUlasan, int rating, Date tanggalUlasan) {
-        this.idUlasan = idUlasan;
-        this.idUser = idUser;
+    public Ulasan(String user, int idKuliner, String isiUlasan, Date tanggalUlasan) throws ValidasiInputException {
+        if (isiUlasan == null || isiUlasan.isEmpty()) {
+            throw new ValidasiInputException("isiUlasan tidak boleh kosong");
+        }
+        this.user = user;
         this.idKuliner = idKuliner;
         this.isiUlasan = isiUlasan;
-        this.rating = rating;
         this.tanggalUlasan = tanggalUlasan;
     }
 
@@ -33,7 +34,19 @@ public class Ulasan {
         return isiUlasan;
     }
 
-    public int getRating() {
-        return rating;
+    public String getUser() {
+        return user;
+    }
+
+    public int getKuliner() {
+        return idKuliner;
+    }
+
+    public String getUlasan() {
+        return isiUlasan;
+    }
+
+    public Date getTanggal() {
+        return tanggalUlasan;
     }
 }

@@ -10,12 +10,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import banyumasakuu.User;
-import banyumasakuu.DatabaseConnection;
+import database.DatabaseConnection;
 import banyumasakuu.ValidasiInputException;
 
 /**
  *
- * @author Nasywa Nur Shafinna
+ * @author finnanasywa
  */
 public class tampilanLogin extends javax.swing.JFrame {
 
@@ -50,18 +50,18 @@ public class tampilanLogin extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 386));
 
         jLabel1.setFont(new java.awt.Font("Vivaldi", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(205, 92, 8));
+        jLabel1.setForeground(new java.awt.Color(255, 153, 51));
         jLabel1.setText("Banyumasku");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(205, 92, 8));
+        jLabel2.setForeground(new java.awt.Color(255, 153, 51));
         jLabel2.setText("Username");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(205, 92, 8));
+        jLabel3.setForeground(new java.awt.Color(255, 153, 51));
         jLabel3.setText("Password");
 
-        btnLogin.setBackground(new java.awt.Color(205, 92, 8));
+        btnLogin.setBackground(new java.awt.Color(255, 153, 51));
         btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
@@ -71,10 +71,9 @@ public class tampilanLogin extends javax.swing.JFrame {
             }
         });
 
-        btnDaftar.setBackground(new java.awt.Color(204, 204, 204));
         btnDaftar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnDaftar.setForeground(new java.awt.Color(255, 102, 102));
-        btnDaftar.setText("Belum punya akun? Daftar");
+        btnDaftar.setForeground(new java.awt.Color(255, 153, 51));
+        btnDaftar.setText("Daftar Disini");
         btnDaftar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnDaftar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,24 +85,26 @@ public class tampilanLogin extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(277, 277, 277))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(169, 169, 169)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnDaftar, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 243, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(277, 277, 277))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnDaftar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(336, 336, 336))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,8 +122,8 @@ public class tampilanLogin extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnDaftar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addComponent(btnDaftar)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -164,8 +165,8 @@ public class tampilanLogin extends javax.swing.JFrame {
                     if ("admin".equalsIgnoreCase(role)) {
                         tampilanManage manageT = new tampilanManage();
                         manageT.setVisible(true);
-                    } else if ("pelanggana".equalsIgnoreCase(role)) {
-                        tampilanMain mainT = new tampilanMain();
+                    } else if ("pelanggan".equalsIgnoreCase(role)) {
+                        tampilanMain mainT = new tampilanMain(username);
                         mainT.setVisible(true);
                     }
                     this.dispose();
@@ -182,7 +183,9 @@ public class tampilanLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnDaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaftarActionPerformed
-        // TODO add your handling code here:
+        tampilanRegister reg = new tampilanRegister();
+        reg.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnDaftarActionPerformed
 
     /**

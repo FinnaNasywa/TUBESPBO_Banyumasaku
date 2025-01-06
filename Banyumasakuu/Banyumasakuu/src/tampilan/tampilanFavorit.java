@@ -6,7 +6,7 @@ package tampilan;
 
 /**
  *
- * @author Nasywa Nur Shafinna
+ * @author finnanasywa
  */
 public class tampilanFavorit extends javax.swing.JFrame {
 
@@ -29,7 +29,7 @@ public class tampilanFavorit extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblFavorit = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,8 +40,8 @@ public class tampilanFavorit extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 153, 51));
         jLabel1.setText("Favorit Ku");
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblFavorit.setBackground(new java.awt.Color(255, 255, 255));
+        tblFavorit.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -49,10 +49,10 @@ public class tampilanFavorit extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Judul Kuliner", "Jumlah Difavoritkan"
+                "Judul Kuliner", "Tanggal Divaforitkan"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblFavorit);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -133,6 +133,6 @@ public class tampilanFavorit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblFavorit;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,7 @@
  */
 package tampilan;
 
-import banyumasakuu.DatabaseConnection;
+import database.DatabaseConnection;
 import banyumasakuu.User;
 import banyumasakuu.ValidasiInputException;
 import java.sql.Connection;
@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Nasywa Nur Shafinna
+ * @author finnanasywa
  */
 public class tampilanRegister extends javax.swing.JFrame {
 
@@ -188,7 +188,7 @@ public class tampilanRegister extends javax.swing.JFrame {
                 stmt.setString(2, user.getEmail());
                 stmt.setString(3, user.getUsername());
                 stmt.setString(4, user.getPassword());
-                stmt.setString(5, "costumer");
+                stmt.setString(5, "pelanggan");
 
                 int affectedRows = stmt.executeUpdate();
                 if (affectedRows > 0) {

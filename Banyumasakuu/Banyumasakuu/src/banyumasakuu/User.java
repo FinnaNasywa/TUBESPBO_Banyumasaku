@@ -8,8 +8,7 @@ package banyumasakuu;
  *
  * @author ACER
  */
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class User {
 
@@ -18,8 +17,6 @@ public class User {
     private String email;
     private String password;
     private String role;
-    private List<Ulasan> ulasanList;
-    private List<Favorite> favoriteList;
 
     public User(String fullName, String email, String username, String password, String role) throws ValidasiInputException {
         if (username == null || username.isEmpty()) {
@@ -43,27 +40,11 @@ public class User {
         return password;
     }
 
-    public void addUlasan(Ulasan ulasan) {
-        ulasanList.add(ulasan);
-    }
-
-    public List<Ulasan> getUlasanList() {
-        return ulasanList;
-    }
-
-    public void addFavorite(Favorite favorite) {
-        favoriteList.add(favorite);
-    }
-
-    public List<Favorite> getFavoriteList() {
-        return favoriteList;
-    }
-
     public String getNama() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return fullName;
     }
 
     public String getEmail() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return email;
     }
 }
